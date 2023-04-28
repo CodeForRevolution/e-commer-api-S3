@@ -5,8 +5,10 @@ const Product = require('../model/product');
 
 
 route.get('/', function (req, res) {
- res.send('this is it');})
- 
-route.get('/products', product_controller.list)
-route.use('/product', require('../route/product'));
-module.exports = route;
+    res.status(200).send({
+        message: 'you lannded on website'
+    })})
+
+    route.get('/products', product_controller.list)
+    route.use('/product', require('../route/product'));
+    module.exports = route;

@@ -1,4 +1,5 @@
 const Product=require('../model/product');
+
 module.exports.create=async function(req,res){
     console.log('you hit the create function ',req.body);
     Product.create(req.body);
@@ -8,8 +9,12 @@ module.exports.create=async function(req,res){
 
 module.exports.list=async function(req,res){
 let product=await Product.find({});
-    res.status(200).send(product);
+  return  res.status(200).send(product);
 }
+
+
+
+
 module.exports.delete=async function(req,res){
 console.log('your params is now',req.params)
 
